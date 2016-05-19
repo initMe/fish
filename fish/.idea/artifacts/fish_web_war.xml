@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="fish-web:war">
-    <output-path>$PROJECT_DIR$/fish-web/target</output-path>
-    <root id="archive" name="fish-web.war">
-      <element id="artifact" artifact-name="fish-web:war exploded" />
-    </root>
-  </artifact>
-</component>
