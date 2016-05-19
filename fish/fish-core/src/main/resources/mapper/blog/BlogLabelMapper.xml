@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fish.biz.dao.blog.BlogLabelMapper" >
+  <resultMap id="BaseResultMap" type="com.fish.biz.domain.blog.BlogLabel" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="blog_id" property="blogId" jdbcType="BIGINT" />
+    <result column="label_id" property="labelId" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, blog_id, label_id
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from blog_label
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from blog_label
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.fish.biz.domain.blog.BlogLabel" >
+    insert into blog_label (id, blog_id, label_id
+      )
+    values (#{id,jdbcType=BIGINT}, #{blogId,jdbcType=BIGINT}, #{labelId,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.fish.biz.domain.blog.BlogLabel" >
+    insert into blog_label
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="blogId != null" >
+        blog_id,
+      </if>
+      <if test="labelId != null" >
+        label_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="blogId != null" >
+        #{blogId,jdbcType=BIGINT},
+      </if>
+      <if test="labelId != null" >
+        #{labelId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.fish.biz.domain.blog.BlogLabel" >
+    update blog_label
+    <set >
+      <if test="blogId != null" >
+        blog_id = #{blogId,jdbcType=BIGINT},
+      </if>
+      <if test="labelId != null" >
+        label_id = #{labelId,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.fish.biz.domain.blog.BlogLabel" >
+    update blog_label
+    set blog_id = #{blogId,jdbcType=BIGINT},
+      label_id = #{labelId,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

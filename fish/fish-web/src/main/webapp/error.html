@@ -1,0 +1,12 @@
+<html> 
+    <head> 
+        <script type="text/javascript"> 
+            window.location.href = "/error.htm"; 
+        </script> 
+    </head> 
+    <body style="display:none"> 
+       body中的内容对用户没有任何实际意义，它存在的唯一目的就是让响应内容长度大于512bytes， 
+       以此骗过“聪明”的IE。 
+       IE浏览器在返回状态为404的时候，如果页面内容长度小于512bytes，它会用浏览器自己的默认错误页面代替响应页面的内容。 
+    </body> 
+</html>

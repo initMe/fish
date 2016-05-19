@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>$!{title}</title>
+    #parse( 'screen/common/htmlheader.vm' )
+    <link rel="stylesheet" href="${rc.contextPath}/media/css/fish.css">
+</head>
+<body >
+    <header id="main-header" class="main-header" role="banner">
+        #parse( 'screen/common/header.vm' )
+    </header>
+    <div id="body" class="body">
+        $screen_content
+    </div>
+</body>

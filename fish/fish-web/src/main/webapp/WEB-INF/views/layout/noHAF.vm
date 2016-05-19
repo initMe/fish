@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>fish的主页</title>
+    #parse( 'screen/common/htmlheader.vm' )
+
+</head>
+<body >
+    <div id="content">
+        <div id= "main" >$screen_content</div>
+    </div>
+</body>

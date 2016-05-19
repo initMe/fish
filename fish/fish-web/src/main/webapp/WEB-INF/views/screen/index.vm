@@ -1,0 +1,147 @@
+#set($layout="layout/noHAF.vm")
+<!-- Theme Style -->
+<link rel="stylesheet" href="${rc.contextPath}/media/css/index.css" media="all">
+<script src="${rc.contextPath}/media/js/modernizr.custom.js"></script>
+<script src="${rc.contextPath}/media/js/modernizr.custom.53451.js"></script>
+<!--web-font-->
+<link href='http://fonts.useso.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.useso.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,700,300,600,800,400' rel='stylesheet' type='text/css'>
+
+<div id="index" class="cbp-spmenu-push">
+    <div class="banner">
+        <div class="col-md-8 banner-left">
+            <img src="${rc.contextPath}/media/images/banner.jpg" alt=""/>
+        </div>
+        <div class="col-md-4 banner-right">
+            <div class="top-nav">
+                <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+                    <h3>Menu</h3>
+                    <a href="${rc.contextPath}/index.htm" class="active">Home</a>
+                    <a href="${rc.contextPath}/blog.htm">Blog</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+                <div class="main buttonset">
+                    <!-- Class "cbp-spmenu-open" gets applied to menu and "cbp-spmenu-push-toleft" or "cbp-spmenu-push-toright" to the body -->
+                    <button id="showRightPush"><img src="${rc.contextPath}/media/images/menu-icon.png" alt=""/></button>
+                    <!--<span class="menu"></span>-->
+                </div>
+                <!-- Classie - class helper functions by @desandro https://github.com/desandro/classie -->
+                <script src="${rc.contextPath}/media/js/classie.js"></script>
+                <script>
+                    var menuRight = document.getElementById( 'cbp-spmenu-s2' ),
+                            showRightPush = document.getElementById( 'showRightPush' ),
+                            //body = document.body;
+                            main = document.getElementById( 'index' );
+
+                    showRightPush.onclick = function() {
+                        classie.toggle( this, 'active' );
+                        classie.toggle( main, 'cbp-spmenu-push-toleft' );
+                        classie.toggle( menuRight, 'cbp-spmenu-open' );
+                        disableOther( 'showRightPush' );
+                    };
+
+                    function disableOther( button ) {
+                        if( button !== 'showRightPush' ) {
+                            classie.toggle( showRightPush, 'disabled' );
+                        }
+                    }
+                </script>
+                <!-- /script-for-menu -->
+            </div>
+            <h1>鱼</h1>
+            <p>Twenty years from now you will be more disappointed by the things that you didn’t do than
+                by the ones you did do. So throw off the bowlines. Sail away from the safe harbor. Catch the
+                trade winds in your sails. Explore. Dream. Discover.</p>
+            <p class="bnr-top">20年后，让你感到失望的不会是你做过的事，而会是你没做过的事，所以，请解开绳索，
+                驶离安全的港湾，扔帆起航吧。去探索，去梦想，去发现!</p>
+            <p style="text-align: right">----Mark Twain</p>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+    <div class="banner-bottom">
+        <div class="col-md-6 banner-bottom-left">
+            <div class="banner-bottom-left-text">
+                <h3>Drawing <span>Scketch<span></h3>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+                    quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex
+                    consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidu.</p>
+            </div>
+            <div class="banner-bottom-left-text middle">
+                <h3>Making  <span>Design<span></h3>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+                    quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex
+                    consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidu.</p>
+            </div>
+            <div class="banner-bottom-left-text">
+                <h3>Developing <span>Product<span></h3>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+                    quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex
+                    consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidu.</p>
+            </div>
+        </div>
+        <div class="col-md-6 banner-bottom-right">
+            <div class="starting-text">
+                <h3>Best <span>Strarting<span></h3>
+                <p>Lorem ipsum dolor sit amet, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex
+                    consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore.
+                    quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea.</p>
+                <div class="read-more">
+                    <a href="#" class="rd-mr  rd-mr-1f">View Our History</a>
+                </div>
+            </div>
+            <div class="dummy-text banner-bottom-left-text">
+                <h3>Verified <span>Dummy<span></h3>
+                <p>Lorem ipsum dolor sit amet, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex
+                    consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore.
+                    quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea.</p>
+                <div class="read-more">
+                    <a href="#" class="rd-mr  rd-mr-1f">Go To The Page</a>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+    <div class="copyrights">Collect from <a href="http://www.cssmoban.com/" >手机网站模板</a></div>
+    <div class="design">
+        <div class="col-md-4 design-left">
+            <h3>This Webpage Is <span>Designed By<span></h3>
+            <img src="${rc.contextPath}/media/images/icon1.png" alt=""/>
+            <span class="my" >My</span>
+            <lable>Graphic Designer</lable>
+        </div>
+        <div class="col-md-8 design-right">
+            <h3>Say <span> 'Hello'<span></h3>
+            <form>
+                <input type="text" value="Your Name" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Your Name';}" required="">
+                <input type="email" value="Your Email" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Your Email';}" required="">
+                <textarea type="text"  onfocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Your Message Here ...';}" required="">Your Message Here ...</textarea>
+                <input type="submit" value="Submit" >
+            </form>
+            <p>Stay Connnected With Us...</p>
+            <div class="social-icons">
+                <ul>
+                    <li><a href="#"> </a></li>
+                    <li><a href="#" class="drbl"> </a></li>
+                    <li><a href="#" class="twit"> </a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+    <!--smooth-scrolling-of-move-up-->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            /*
+var defaults = {
+    containerID: 'toTop', // fading element id
+    containerHoverID: 'toTopHover', // fading element hover id
+    scrollSpeed: 1200,
+    easingType: 'linear'
+};
+*/
+            $().UItoTop({ easingType: 'easeOutQuart' });
+        });
+    </script>
+    <a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+    <!--//smooth-scrolling-of-move-up-->
+</div>

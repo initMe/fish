@@ -1,0 +1,19 @@
+<section class="main-header__mugshot">
+    <a href="">
+        <img src="${rc.contextPath}/media/images/head.jpg" alt="fish">
+    </a>
+</section>
+<nav role="navigation" id="main-navigation" class="main-navigation">
+    <ul role="menu">
+        <li role="menuitem">
+            <a href="${rc.contextPath}/index.htm">Index</a>
+        </li>
+        <li role="menuitem" class="current">
+            <a href="">Blog</a>
+        </li>
+        <li role="menuitem">
+            <a href="">Photos</a>
+        </li>
+    </ul>
+</nav>
+#parse( 'screen/common/footer.vm' )

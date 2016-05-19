@@ -1,0 +1,9 @@
+this is the solr query result list:<br/>
+
+#foreach ($item in $solrQuery.items)
+
+    id : $item.id <br>
+    title : $item.title <br>
+
+    -----end of this document-----
+#end

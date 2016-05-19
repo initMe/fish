@@ -1,0 +1,27 @@
+
+<section id="header-img" class="header-img">
+    <div class="wrap">
+        <h1 class="kilo flus">
+            Blog
+        </h1>
+    </div>
+</section>
+<section class="container">
+    #if ($page.size > 0)
+        #foreach ($blog in $page.list)
+            <article class="blog_article">
+                <header class="push--bottom text--center">
+                    <div class="underline push-half--bottom">
+                        <h2 class="flush"><a href="">$!{blog.title}</a></h2>
+                    </div>
+                    <time datetime="$!{blog.gmtCreate}" class="blog__date">
+                        $!{blog.gmtCreate}
+                    </time>
+                </header>
+                <div id="article-text">
+                    $!{blog.content}
+                </div>
+            </article>
+        #end
+    #end
+</section>
