@@ -20,4 +20,6 @@ public interface BlogService {
     public PageInfo<Blog> pageQuery(BlogVO query, Integer currentPage, Integer pageSize);
 
 
+    public Blog findByPrimaryKey(Long blogId);
+
 }
