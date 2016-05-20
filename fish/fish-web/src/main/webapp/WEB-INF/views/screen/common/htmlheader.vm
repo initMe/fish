@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="${rc.contextPath}/media/css/bootstrap.css" media="all">
 <link rel="stylesheet" href="${rc.contextPath}/media/css/component.css">
 
-
+<!--common js-->
 <script src="${rc.contextPath}/media/js/jquery.min.js"></script>
 <script src="${rc.contextPath}/media/js/bootstrap.min.js"></script>
 
@@ -27,6 +27,23 @@
             $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
         });
     });
+</script>
+<!--smooth-scrolling-of-move-up-->
+<script type="text/javascript">
+    $(document).ready(function() {
+        $().UItoTop({ easingType: 'easeOutQuart' });
+    });
+</script>
+
+<!--simditor -->
+<link rel="stylesheet" href="${rc.contextPath}/media/css/simditor.css">
+<script src="${rc.contextPath}/media/js/simditor/module.min.js"></script>
+<script src="${rc.contextPath}/media/js/simditor/hotkeys.min.js"></script>
+<script src="${rc.contextPath}/media/js/simditor/uploader.min.js"></script>
+<script src="${rc.contextPath}/media/js/simditor/simditor.min.js"></script>
+
+<script language="javaScript">
+    var appServer = "${rc.contextPath}";
 </script>
 
 <!--//end-smoth-scrolling-->

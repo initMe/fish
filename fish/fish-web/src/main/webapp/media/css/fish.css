@@ -1,4 +1,21 @@
-
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	border: 0;
+	font-family: inherit;
+	font-size: 100%;
+	font-style: inherit;
+	font-weight: inherit;
+	margin: 0;
+	outline: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
 
 :focus {/* remember to define focus styles! */
 	outline: 0;
@@ -288,14 +305,14 @@ a:hover {
 }
 
 #header-img {
-    background-image: url(../images/head-img.jpg);
+
     width: 100%;
 }
 
 .header-img {
     min-height: 250px;
 }
-.header-img {鞥
+.header-img {
     background: no-repeat center center;
     background-size: cover;
     color: #fff;
@@ -320,6 +337,84 @@ a:hover {
     width: 70%;
 }
 
+.hentry {
+	border-bottom: 1px solid #ddd;
+	margin: 0 0 1.625em;
+	padding: 0 0 1.625em;
+	position: relative;
+}
+
+.entry-title, .entry-title a {
+	color: #222;
+	text-decoration: none;
+}
+.entry-title {
+	clear: both;
+	text-align: left;
+	color: #222;
+	font-size: 24px;
+	font-weight: bold;
+	line-height: 1.5em;
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+
+.entry-author{
+	margin-left:5px;
+}
+
+.entry-title a:hover,
+.entry-title a:focus,
+.entry-title a:active {
+	color: #1982d1;
+}
+
+.entry-content{
+	padding: 1.625em 0;
+}
+
+.entry-meta {
+	color: #666;
+	clear: both;
+	font-size: 12px;
+	line-height: 18px;
+}
+
+.entry-meta a {
+	font-weight: bold;
+}
+a {
+	color: #1982d1;
+	text-decoration: none;
+}
+
+
+.entry-header .comments-link a {
+	background: #1982d1 url(../images/comment-bubble.png) no-repeat;
+	color: #333;
+	font-size: 13px;
+	font-weight: normal;
+	line-height: 35px;
+	overflow: hidden;
+	padding: 0 0 0;
+	position: absolute;
+	top: 1.5em;
+	right: 0;
+	text-align: center;
+	text-decoration: none;
+	width: 43px;
+	height: 36px;
+}
+
+.entry-header .comments-link a:hover,
+.entry-header .comments-link a:focus,
+.entry-header .comments-link a:active {
+	background-color: #1982d1;
+	color: #fff;
+	color: rgba(255,255,255,0.8);
+}
+
+/*--------------------------blog details--------------------------------*/
 
 .blog__article {
     margin-bottom: 250px;
@@ -375,4 +470,100 @@ h2 {
     font-weight: inherit;
     color: inherit;
     text-decoration: none;
+}
+
+
+#load-data{ display:block;}
+.loader{
+	display: none;
+	width: 120px;
+	margin: 0 auto;
+}
+.no-data{
+	display: none;
+	text-align: center;
+}
+
+.no-data span{
+	font-size: 14px;
+	font-family: 'Great Vibes', cursive;
+	color: #0f88eb;
+}
+
+.loader span {
+	vertical-align: middle;
+	border-radius: 100%;
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	margin: 0 4px;
+	-webkit-animation: loader 0.8s linear infinite alternate;
+	animation: loader 0.8s linear infinite alternate;
+}
+.loader span:nth-child(1) {
+	-webkit-animation-delay: -1s;
+	animation-delay: -1s;
+	background: rgba(245, 103, 115,0.6);
+}
+.loader span:nth-child(2) {
+	-webkit-animation-delay: -0.8s;
+	animation-delay: -0.8s;
+	background: rgba(245, 103, 115,0.8);
+}
+.loader span:nth-child(3) {
+	-webkit-animation-delay: -0.26666s;
+	animation-delay: -0.26666s;
+	background: rgba(245, 103, 115,1);
+}
+.loader span:nth-child(4) {
+	-webkit-animation-delay: -0.8s;
+	animation-delay: -0.8s;
+	background: rgba(245, 103, 115,0.8);
+}
+.loader span:nth-child(5) {
+	-webkit-animation-delay: -1s;
+	animation-delay: -1s;
+	background: rgba(245, 103, 115,0.4);
+}
+@keyframes loader {
+	from {
+		transform: scale(0, 0);
+	}
+	to {
+		transform: scale(1, 1);
+	}
+}
+@-webkit-keyframes loader {
+	from {
+		-webkit-transform: scale(0, 0);
+	}
+	to {
+		-webkit-transform: scale(1, 1);
+	}
+}
+
+/*--------------------to top menu--------------------------*/
+/*--slider-up-arrow--*/
+#toTop {
+	display: none;
+	text-decoration: none;
+	position: fixed;
+	bottom: 7%;
+	right: 3%;
+	overflow: hidden;
+	width: 32px;
+	height: 32px;
+	border: none;
+	text-indent: 100%;
+	background: url("../images/move-up.png") no-repeat 0px 0px;
+}
+#toTopHover {
+	width: 32px;
+	height: 32px;
+	display: block;
+	overflow: hidden;
+	float: right;
+	opacity: 0;
+	-moz-opacity: 0;
+	filter: alpha(opacity=0);
 }

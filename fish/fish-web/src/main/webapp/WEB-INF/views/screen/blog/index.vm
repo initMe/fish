@@ -1,3 +1,10 @@
+<script>
+    $(function(){
+        var random = Math.ceil(Math.random()*7);
+        var path = "url(${rc.contextPath}/media/images/head-img-"+random+".jpg)";
+        $("#header-img").css("background-image", path);
+    })
+</script>
 
 <section id="header-img" class="header-img">
     <div class="wrap">
@@ -6,22 +13,18 @@
         </h1>
     </div>
 </section>
-<section class="container">
-    #if ($page.size > 0)
-        #foreach ($blog in $page.list)
-            <article class="blog_article">
-                <header class="push--bottom text--center">
-                    <div class="underline push-half--bottom">
-                        <h2 class="flush"><a href="">$!{blog.title}</a></h2>
-                    </div>
-                    <time datetime="$!{blog.gmtCreate}" class="blog__date">
-                        $!{blog.gmtCreate}
-                    </time>
-                </header>
-                <div id="article-text">
-                    $!{blog.content}
-                </div>
-            </article>
-        #end
-    #end
+
+<section id="container" class="container">
+
+    <div id="blog-list">
+
+    </div>
+    <a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+    <div id="load-data">
+        <div class="loader"><span></span><span></span><span></span><span></span></div>
+        <p class="no-data"><span>数据已全部加载完咯。。。</span></p>
+    </div>
+
 </section>
+
+<script src="${rc.contextPath}/media/js/scroll.load.js"></script>

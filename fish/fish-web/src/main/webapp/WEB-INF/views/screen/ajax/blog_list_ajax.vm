@@ -1,0 +1,41 @@
+#set($layout="layout/blank.vm")
+
+#if ($page.size > 0)
+    #foreach ($blog in $page.list)
+        <article class="hentry">
+            <header class="entry-header">
+                <h1 class="entry-title">
+                    <a href="${rc.contextPath}/blog/details/$!{blog.id}.htm" rel="bookmark">$!{blog.title}</a>
+                </h1>
+                <div class="entry-meta">
+                    <span class="sep">发表于</span>
+                    <time class="entry-date">$!{blog.gmtCreate}</time>
+                    <span class="entry-author">
+                        <span class="sep">由</span>
+                        <a href="${rc.contextPath}/user/blogs.htm?author=$!{blog.author}" title="查看所有$!{blog.author}的blog">$!{blog.author}</a>
+                        <span class="sep">发表</span>
+                    </span>
+                </div>
+                <div class="comments-link">
+                    <a href="${rc.contextPath}/comment/comments.htm?blogId=$!{blog.id}">1</a>
+                </div>
+            </header>
+            <div class="entry-content">
+                $!{blog.brief}
+            </div>
+            <footer class="entry-meta">
+                <span class="cat-links">
+                    <span class="sep">发表在</span>
+                    <a href="${rc.contextPath}/category/details.htm?id=$!{blog.cateCode}" rel="category cat">$!{blog.cateCode}</a>
+                </span>
+                <span class="sep">|</span>
+                <span class="tag-links">
+                    <span class="sep">标签有</span>
+                    #foreach ($label in $labels)
+                        <a href="${rc.contextPath}/label/details.htm?id=$!{label.id}" rel="cat">$!{label.name}</a>
+                    #end
+                </span>
+            </footer>
+        </article>
+    #end
+#end

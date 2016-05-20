@@ -33,4 +33,12 @@ public class BlogServiceImpl implements BlogService {
 
         return new PageInfo<Blog>(blogList);
     }
+
+    @Override
+    public Blog findByPrimaryKey(Long blogId) {
+
+        Assert.notNull(blogId, "blogId");
+
+        return blogMapper.selectByPrimaryKey(blogId);
+    }
 }
