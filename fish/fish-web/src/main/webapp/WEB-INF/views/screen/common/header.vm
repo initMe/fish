@@ -15,5 +15,9 @@
             <a href="">Photos</a>
         </li>
     </ul>
+
+    <form id="search" action="" method="get">
+        <input name="q" size="40" type="text" placeholder="Search..." />
+    </form>
 </nav>
 #parse( 'screen/common/footer.vm' )

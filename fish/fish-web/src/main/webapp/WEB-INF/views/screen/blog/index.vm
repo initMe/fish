@@ -1,8 +1,11 @@
+
 <script>
     $(function(){
         var random = Math.ceil(Math.random()*7);
         var path = "url(${rc.contextPath}/media/images/head-img-"+random+".jpg)";
         $("#header-img").css("background-image", path);
+
+        $('[data-toggle="tooltip"]').ggtooltip();
     })
 </script>
 
@@ -19,7 +22,8 @@
     <div id="blog-list">
 
     </div>
-    <a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+    <a href="${rc.contextPath}/blog/write_blog.htm" id="write-But" data-toggle="tooltip" data-placement="top" title="写博客"><span id="write-i"></span></a>
+    <a href="#" id="toTop" data-toggle="tooltip" data-placement="left" title="返回顶部" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
     <div id="load-data">
         <div class="loader"><span></span><span></span><span></span><span></span></div>
         <p class="no-data"><span>数据已全部加载完咯。。。</span></p>
@@ -28,3 +32,4 @@
 </section>
 
 <script src="${rc.contextPath}/media/js/scroll.load.js"></script>
+

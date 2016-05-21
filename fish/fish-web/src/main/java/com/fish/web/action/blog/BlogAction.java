@@ -81,4 +81,10 @@ public class BlogAction extends BaseAction{
 
     }
 
+    @RequestMapping(value = "/blog/write_blog.htm")
+    public String writeBlog(Model model){
+
+        return "/blog/write_blog";
+    }
+
 }

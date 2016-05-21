@@ -4,6 +4,8 @@
         var random = Math.ceil(Math.random()*7);
         var path = "url(${rc.contextPath}/media/images/head-img-"+random+".jpg)";
         $("#header-img").css("background-image", path);
+
+        $('[data-toggle="tooltip"]').tooltip();
     })
 </script>
 <section id="header-img" class="header-img">
@@ -28,19 +30,56 @@
                 $!{blog.content}
             </div>
         </article>
+        <div id="comment-list">
+            <div class="comment-title">
+                <h2>5条评论</h2>
+            </div>
+
+                <article class="clearfix widget-answers__item" id="">
+                    <div class="post-col">
+                        <div class="widget-vote">
+                            <button type="button" class="like" data-toggle="tooltip" data-placement="top" title="" data-original-title="赞同"></button>
+                            <span class="count">2</span>
+                            <button type="button" class="hate"  data-toggle="tooltip" data-placement="top" title="" data-original-title="反对"></button>
+                        </div>
+                    </div>
+                    <div class="post-offset">
+                        <div class="answer fmt">问题的答案在这里</div>
+                        <div class="row answer__info--row">
+                            <div class="post-opt col-md-8 col-sm-8 col-xs-10">
+                                <ul class="list-inline mb0">
+                                    <li> 23 小时前回答<span class="text-muted"></span></li>
+                                    <li><a href="javascript:void(0);" class="comments">评论</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-2 col-sm-2 col-xs-2 answer__info--author-avatar">
+                                <a class="mr10" href=""><img class="avatar-32" src="" alt=""></a>
+                            </div>
+                            <div class="col-md-2 col-sm-2 hidden-xs answer__info--author">
+                                <div class=" answer__info--author-warp">
+                                    <a class="answer__info--author-name" title="magooup" href="">magooup</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+            <div id="smeditor">
+                <textarea id="editor" placeholder="请写下点什么吧" autofocus></textarea>
+            </div>
+            <div id="answerSubmit" class="mt15 clearfix">
+                <div class="pull-right">
+                    <button type="submit" id="answerIt" class="btn btn-lg btn-primary ml20">提交评论</button>
+                </div>
+            </div>
+        </div>
     #end
 </section>
 
-<div id="smeditor" style="margin: 50px 100px;" >
-    <textarea id="editor" placeholder="Balabala" autofocus></textarea>
-</div>
-
-</textarea>
 
 <script>
     var editor = new Simditor({
-        textarea: $('#editor'),
-        placeholder : "请写下点什么吧"
+        textarea: $('#editor')
         //optional options
     });
 </script>

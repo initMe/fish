@@ -1755,3 +1755,20 @@ nav#cbp-spmenu-s2 {
   margin: 2.5em 0;
 }
 }
+.canvas-left{
+	background-color: #000;
+}
+
+.welcome-word{
+	display: block;
+	position: absolute;
+	top: 300px;
+	left:150px;
+	z-index: 999;
+	color: #ffffff;
+	font-weight: bold;
+}
+.welcome-word h2{
+
+}
+

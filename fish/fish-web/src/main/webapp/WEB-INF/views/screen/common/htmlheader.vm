@@ -7,10 +7,12 @@
 <!-- Bootstrap Style -->
 <link rel="stylesheet" href="${rc.contextPath}/media/css/bootstrap.css" media="all">
 <link rel="stylesheet" href="${rc.contextPath}/media/css/component.css">
+<link rel="stylesheet" href="${rc.contextPath}/media/css/ggtooltip.css">
 
 <!--common js-->
 <script src="${rc.contextPath}/media/js/jquery.min.js"></script>
 <script src="${rc.contextPath}/media/js/bootstrap.min.js"></script>
+<script src="${rc.contextPath}/media/js/ggtooltip.js"></script>
 
 <!-- start-smoth-scrolling-->
 <script src="${rc.contextPath}/media/js/move-top.js"></script>
@@ -34,6 +36,9 @@
         $().UItoTop({ easingType: 'easeOutQuart' });
     });
 </script>
+
+<!--background-blur-->
+<script src="${rc.contextPath}/media/js/background-blur.min.js"></script>
 
 <!--simditor -->
 <link rel="stylesheet" href="${rc.contextPath}/media/css/simditor.css">
