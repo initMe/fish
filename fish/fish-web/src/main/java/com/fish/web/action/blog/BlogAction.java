@@ -77,6 +77,8 @@ public class BlogAction extends BaseAction{
 
         model.addAttribute("blog", blogService.findByPrimaryKey(blogId));
 
+        model.addAttribute("title", "我的博客");
+
         return "/blog/blog_detail";
 
     }
@@ -84,6 +86,7 @@ public class BlogAction extends BaseAction{
     @RequestMapping(value = "/blog/write_blog.htm")
     public String writeBlog(Model model){
 
+        model.addAttribute("title", "写博客");
         return "/blog/write_blog";
     }
 

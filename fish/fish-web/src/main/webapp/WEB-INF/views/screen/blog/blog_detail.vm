@@ -11,7 +11,7 @@
 <section id="header-img" class="header-img">
     <div class="wrap">
         <h1 class="kilo flus">
-            Blog
+            $!{blog.title}
         </h1>
     </div>
 </section>
@@ -20,7 +20,7 @@
         <article class="blog_article">
             <header class="push--bottom text--center">
                 <div class="underline push-half--bottom">
-                    <h2 class="flush"><a href="">$!{blog.title}</a></h2>
+
                 </div>
                 <time datetime="$!{blog.gmtCreate}" class="blog__date">
                     $!{blog.gmtCreate}
@@ -64,7 +64,7 @@
                     </div>
                 </article>
 
-            <div id="smeditor">
+            <div id="write-smeditor">
                 <textarea id="editor" placeholder="请写下点什么吧" autofocus></textarea>
             </div>
             <div id="answerSubmit" class="mt15 clearfix">

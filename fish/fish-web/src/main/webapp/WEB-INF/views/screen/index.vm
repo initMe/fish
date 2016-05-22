@@ -60,21 +60,18 @@
     </div>
     <div class="copyrights">Collect from <a href="http://www.cssmoban.com/" >手机网站模板</a></div>
     <div class="design">
-        <div class="col-md-4 design-left">
-            <h3>This Webpage Is <span>Designed By</span></h3>
-            <img src="${rc.contextPath}/media/images/icon1.png" alt=""/>
-            <span class="my" >My</span>
-            <lable>Graphic Designer</lable>
+        <div class="col-md-5 design-left">
+            <h3>关于<span>我</span></h3>
         </div>
-        <div class="col-md-8 design-right">
-            <h3>Say <span> 'Hello'</span></h3>
+        <div class="col-md-7 design-right">
+            <h3>好不容易来一趟，写点啥呗。。。</h3>
             <form>
-                <input type="text" value="Your Name" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Your Name';}" required="">
-                <input type="email" value="Your Email" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Your Email';}" required="">
-                <textarea type="text"  onfocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Your Message Here ...';}" required="">Your Message Here ...</textarea>
-                <input type="submit" value="Submit" >
+                <input type="text" value="留下您的大名..." onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '留下您的大名...';}">
+                <textarea type="text"  onfocus="this.value = '';" onBlur="if (this.value == '') {this.value = '欢迎给我留言 ...';}" required="">欢迎给我留言 ...</textarea>
+                <input type="submit" value="留言" >
             </form>
-            <p>Stay Connnected With Us...</p>
+            <!--
+            <p>Stay Connnected With Me...</p>
             <div class="social-icons">
                 <ul>
                     <li><a href="#"> </a></li>
@@ -82,6 +79,7 @@
                     <li><a href="#" class="twit"> </a></li>
                 </ul>
             </div>
+            -->
         </div>
         <div class="clearfix"> </div>
     </div>

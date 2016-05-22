@@ -9,7 +9,7 @@
             <a href="${rc.contextPath}/index.htm">Index</a>
         </li>
         <li role="menuitem" class="current">
-            <a href="">Blog</a>
+            <a href="${rc.contextPath}/blog.htm">Blog</a>
         </li>
         <li role="menuitem">
             <a href="">Photos</a>

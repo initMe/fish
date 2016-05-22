@@ -14,6 +14,7 @@ body{
 }
 .banner-right{
 	background:#f3f3f3;
+	height: 650px;
 }
 button#showRightPush {
   border: none;
@@ -230,13 +231,13 @@ a.rd-mr.rd-mr-1f:focus {
 }
 .design-left{
 	background: url(../images/img4.jpg)no-repeat 0px 0px;
-	height: 824px;
+	height: 780px;
 	background-size: cover;
 	position:relative;
 }
 .design-right{
 	background: url(../images/img5.jpg)no-repeat 0px 0px;
-	height: 824px;
+	height: 780px;
 	background-size: cover;
 }
 .design-left h3 {
@@ -275,7 +276,7 @@ a.rd-mr.rd-mr-1f:focus {
 }
 .design-right h3 {
 	margin: 0 0 1.5em 0;
-	font-size: 3.3em;
+	font-size: 2.1em;
 	font-weight: 300;
 	font-family: 'Roboto', sans-serif;
 	color: #fff;
@@ -294,7 +295,7 @@ a.rd-mr.rd-mr-1f:focus {
 	background: none;
 	border: 1px solid #fff;
 	border-radius: 10px;
-	width: 48.5%;
+	width: 100%;
 	margin: 0 0 1em 0;
 	outline: none;
 	font-size: 16px;

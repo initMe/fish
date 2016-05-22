@@ -425,7 +425,7 @@ a {
 
 
 .entry-header .comments-link a {
-	background: #1982d1 url(../images/comment-bubble.png) no-repeat;
+	background: #CCCCFF url(../images/comment-bubble.png) no-repeat;
 	color: #333;
 	font-size: 13px;
 	font-weight: normal;
@@ -755,7 +755,7 @@ h2 {
 	background-color: #49be38;
 }
 #write-i {
-	margin: 5px 0 0 5px;
+	margin: 4px 0 0 4px;
 	width: 40px;
 	height: 40px;
 	display: block;
@@ -765,4 +765,102 @@ h2 {
 	z-index: 999;
 }
 
+/*---------------write blog page---------------------*/
+#preview-container{
+	width: 100%;
+	height: 700px;
+	overflow: hidden;
+	position: relative;
+}
+#preview {
+	height: 700px;
+}
+
+/* Plugin will add this class to blurred image, providing you with control over certain aspects */
+.bg-blur {
+	z-index: -2;
+	opacity: 0;
+	position: absolute;
+	min-height: 100%;
+	height: auto;
+	display: block;
+	top: 0;
+	max-height: none;
+	/* Add this CSS to remove transparent border around the image */
+	left: -10%;
+	width: 120%;
+}
+
+/*
+    An element with this class is added by the plugin to provide an overlay above the blurred image
+    It could drastically improve the appearance of the blurred image for content readability
+*/
+.bg-blur-overlay {
+	z-index: -1;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&amp;0.15+0,1+100 */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjE1Ii8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(top,  rgba(0,0,0,0.15) 0%, rgba(0,0,0,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.15)), color-stop(100%,rgba(0,0,0,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(0,0,0,0.15) 0%,rgba(0,0,0,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(0,0,0,0.15) 0%,rgba(0,0,0,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(0,0,0,0.15) 0%,rgba(0,0,0,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(0,0,0,0.15) 0%,rgba(0,0,0,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#26000000', endColorstr='#000000',GradientType=0 ); /* IE6-8 */
+}
+
+#preview .container{
+	margin: 0 auto;
+}
+.write-container{
+	width: 100%;
+	background-color: #ffffff;
+	height: auto;
+	min-height: 680px;
+	opacity: 0.9;
+	filter:alpha(opacity=90);
+	-moz-opacity:0.9;
+	margin: 0;
+	padding: 5px 15px;
+}
+
+#write-smeditor, #brief-smeditor{
+	width: 100%;
+	height: 350px;
+	margin: 0 auto;
+	overflow-y: auto;
+}
+
+#brief-smeditor{
+	height: 200px;
+}
+
+#brief-smeditor .simditor .simditor-body {
+	min-height: 150px;
+}
+.publish-footer {
+	width: 100%;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	z-index: 3;
+	background-color: #eee;
+	box-shadow: 0 -1px 2px 0 rgba(0,0,0,.24);
+	padding: 5px;
+}
+
+.publish-footer .btn-primary{
+	color: #fff;
+	background-color: #5cb85c;
+	border-color: #4cae4c;
+}
+.publish-footer .btn-primary:hover {
+	color: #fff;
+	background-color: #006741;
+	border-color: #00432a;
+}
 
