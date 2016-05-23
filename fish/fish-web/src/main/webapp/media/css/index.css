@@ -267,13 +267,6 @@ a.rd-mr.rd-mr-1f:focus {
 	letter-spacing: 1px;
 	line-height: 2;
 }
-.design-left lable {
-	display: block;
-	color: #fff;
-	font-size: 17px;
-	font-weight: 300;
-	letter-spacing: 1px;
-}
 .design-right h3 {
 	margin: 0 0 1.5em 0;
 	font-size: 2.1em;
@@ -1106,9 +1099,6 @@ nav#cbp-spmenu-s2 a {
 }
 .design-left span.my {
 	font-size: 28px;
-}
-.design-left lable {
-	font-size: 16px;
 }
 .design-left img {
 	left: 9%;

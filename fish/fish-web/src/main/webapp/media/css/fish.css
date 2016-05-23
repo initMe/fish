@@ -768,12 +768,12 @@ h2 {
 /*---------------write blog page---------------------*/
 #preview-container{
 	width: 100%;
-	height: 700px;
+	height: 900px;
 	overflow: hidden;
 	position: relative;
 }
 #preview {
-	height: 700px;
+	height: 900px;
 }
 
 /* Plugin will add this class to blurred image, providing you with control over certain aspects */
@@ -825,7 +825,7 @@ h2 {
 	filter:alpha(opacity=90);
 	-moz-opacity:0.9;
 	margin: 0;
-	padding: 5px 15px;
+	padding: 30px 15px;
 }
 
 #write-smeditor, #brief-smeditor{
@@ -853,12 +853,12 @@ h2 {
 	padding: 5px;
 }
 
-.publish-footer .btn-primary{
+.btn-primary{
 	color: #fff;
 	background-color: #5cb85c;
 	border-color: #4cae4c;
 }
-.publish-footer .btn-primary:hover {
+.btn-primary:hover {
 	color: #fff;
 	background-color: #006741;
 	border-color: #00432a;

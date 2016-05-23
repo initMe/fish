@@ -5,7 +5,7 @@
         var path = "url(${rc.contextPath}/media/images/head-img-"+random+".jpg)";
         $("#header-img").css("background-image", path);
 
-        $('[data-toggle="tooltip"]').tooltip();
+        $('[data-toggle="tooltip"]').ggtooltip();
     })
 </script>
 <section id="header-img" class="header-img">
@@ -64,7 +64,7 @@
                     </div>
                 </article>
 
-            <div id="write-smeditor">
+            <div id="smeditor">
                 <textarea id="editor" placeholder="请写下点什么吧" autofocus></textarea>
             </div>
             <div id="answerSubmit" class="mt15 clearfix">
@@ -74,6 +74,7 @@
             </div>
         </div>
     #end
+    <a href="#" id="toTop" data-toggle="tooltip" data-placement="left" title="返回顶部" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 </section>
 
 
