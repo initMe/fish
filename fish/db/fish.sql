@@ -22,7 +22,7 @@ DROP TABLE IF EXISTS `blog`;
 CREATE TABLE `blog` (
   `id` bigint(11) unsigned NOT NULL AUTO_INCREMENT COMMENT 'blog主键',
   `title` varchar(32) NOT NULL COMMENT 'blog标题',
-  `cate_code` int(2) NOT NULL COMMENT '所属分类',
+  `cate_code` bigint(11) NOT NULL COMMENT '所属分类',
   `brief` varchar(50) DEFAULT NULL COMMENT '简介',
   `title_pic` varchar(50) DEFAULT NULL COMMENT '封面图片',
   `author_id` bigint(11) NOT NULL COMMENT '作者id',

@@ -68,4 +68,18 @@
       description = #{description,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
+
+  <select id="selectByQuery" resultMap="BaseResultMap" parameterType="com.fish.biz.domain.blog.Category">
+    select
+    <include refid="Base_Column_List" />
+    from category
+    <where>
+      <if test="id != null" >
+        id = #{id,jdbcType=BIGINT}
+      </if>
+      <if test="name != null">
+        and name = #{name,jdbcType=VARCHAR}
+      </if>
+    </where>
+  </select>
 </mapper>

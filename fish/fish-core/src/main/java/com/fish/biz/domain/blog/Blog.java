@@ -1,6 +1,7 @@
 package com.fish.biz.domain.blog;
 
 import java.util.Date;
+import java.util.List;
 
 public class Blog {
     /** blog主键 */
@@ -10,7 +11,7 @@ public class Blog {
     private String title;
 
     /** 所属分类 */
-    private Integer cateCode;
+    private Long cateCode;
 
     /** 简介 */
     private String brief;
@@ -51,6 +52,17 @@ public class Blog {
     /** 内容 */
     private String content;
 
+    /** 多个标签 id  **/
+    private List<Long> labels;
+
+    public List<Long> getLabels() {
+        return labels;
+    }
+
+    public void setLabels(List<Long> labels) {
+        this.labels = labels;
+    }
+
     public Long getId() {
         return id;
     }
@@ -67,11 +79,11 @@ public class Blog {
         this.title = title == null ? null : title.trim();
     }
 
-    public Integer getCateCode() {
+    public Long getCateCode() {
         return cateCode;
     }
 
-    public void setCateCode(Integer cateCode) {
+    public void setCateCode(Long cateCode) {
         this.cateCode = cateCode;
     }
 

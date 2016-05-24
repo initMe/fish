@@ -12,7 +12,7 @@
 	<tool>
         <key>dateTool</key>
         <scope>application</scope>
-        <class>org.apache.velocity.tools.generic.DateTool</class>
+        <class>com.fish.utils.DateUtil</class>
     </tool>
 
 </toolbox>

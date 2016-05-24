@@ -40,7 +40,7 @@
     delete from blog
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.fish.biz.domain.blog.Blog" >
+  <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.fish.biz.domain.blog.Blog" >
     insert into blog (id, title, cate_code, 
       brief, title_pic, author_id, 
       keywords, is_top, click_count, 
@@ -54,7 +54,7 @@
       #{gmtCreate,jdbcType=TIMESTAMP}, #{modifier,jdbcType=VARCHAR}, #{gmtModify,jdbcType=TIMESTAMP}, 
       #{content,jdbcType=LONGVARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.fish.biz.domain.blog.Blog" >
+  <insert id="insertSelective" useGeneratedKeys="true" keyProperty="id" parameterType="com.fish.biz.domain.blog.Blog" >
     insert into blog
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -263,6 +263,6 @@
         and cate_code = #{cateCode,jdbcType=INTEGER}
       </if>
     </where>
-
+    order by id desc
   </select>
 </mapper>

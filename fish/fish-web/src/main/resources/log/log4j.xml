@@ -67,7 +67,7 @@
     
     <!-- [框架Logger] 数据访问层 - mybatis -->
     <logger name="org.mybatis" additivity="true">
-        <level value="${loggingLevel}/common-sql.log" />
+        <level value="${loggingRoot}/common-sql.log" />
         <appender-ref ref="SQL-APPENDER" />
         <appender-ref ref="ERROR-APPENDER" />
         <appender-ref ref="CONSOLE" />
@@ -75,7 +75,7 @@
     
     <!-- [框架Logger] 数据访问层 - SQL -->
     <logger name="java.sql" additivity="true">
-        <level value="${loggingLevel}/common-sql.log" />
+        <level value="${loggingRoot}/common-sql.log" />
         <appender-ref ref="SQL-APPENDER" />
         <appender-ref ref="ERROR-APPENDER" />
         <appender-ref ref="CONSOLE" />

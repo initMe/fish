@@ -408,6 +408,27 @@ a:hover {
 	padding: 1.625em 0;
 }
 
+.entry-content .blog-title-pic{
+	display: inline-block;
+}
+
+.entry-content img{
+	height: 200px;
+	width: 200px;
+	display: inline-block;
+	margin: 5px;
+	vertical-align: top;
+}
+
+.entry-content p{
+	display: inline;
+}
+
+.entry-content span{
+	color : #000;
+	font-size: 16px;
+}
+
 .entry-meta {
 	color: #666;
 	clear: both;
@@ -858,7 +879,7 @@ h2 {
 	background-color: #5cb85c;
 	border-color: #4cae4c;
 }
-.btn-primary:hover {
+ .btn-primary:link, .btn-primary:visited, .btn-primary:hover, .btn-primary:active{
 	color: #fff;
 	background-color: #006741;
 	border-color: #00432a;

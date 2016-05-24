@@ -10,9 +10,9 @@ import java.util.List;
 public interface BlogMapper {
     int deleteByPrimaryKey(Long id);
 
-    int insert(Blog record);
+    Long insert(Blog record);
 
-    int insertSelective(Blog record);
+    Long insertSelective(Blog record);
 
     Blog selectByPrimaryKey(Long id);
 

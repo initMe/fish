@@ -1,8 +1,12 @@
 package com.fish.biz.service.blog;
 
+import com.fish.biz.common.BaseErrResult;
 import com.fish.biz.domain.blog.Blog;
+import com.fish.biz.domain.blog.Category;
 import com.fish.biz.vo.blog.BlogVO;
 import com.github.pagehelper.PageInfo;
+
+import java.util.List;
 
 /**
  * @author fish
@@ -19,7 +23,10 @@ public interface BlogService {
      */
     public PageInfo<Blog> pageQuery(BlogVO query, Integer currentPage, Integer pageSize);
 
-
     public Blog findByPrimaryKey(Long blogId);
+
+    public BaseErrResult saveBlog(Blog blog);
+
+    public List<Category> findCategorys(Category category);
 
 }

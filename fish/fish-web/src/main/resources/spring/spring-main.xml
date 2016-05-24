@@ -23,7 +23,10 @@
         <property name="maxInMemorySize">
             <value>1024000000</value>
         </property>
-    </bean>
+		<property name="defaultEncoding">
+			<value>UTF-8</value>
+		</property>
+	</bean>
 	
 	<!-- 如果在包扫描层用到，必须写在包扫描前面才有用 -->
 	<bean id="ApplicationContextHolder" class="com.fish.utils.ApplicationContextHolder"  scope="singleton"></bean>

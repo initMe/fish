@@ -23,7 +23,7 @@
 
                 </div>
                 <time datetime="$!{blog.gmtCreate}" class="blog__date">
-                    $!{blog.gmtCreate}
+                    $!dateTool.format($!{blog.gmtCreate})
                 </time>
             </header>
             <div id="article-text">

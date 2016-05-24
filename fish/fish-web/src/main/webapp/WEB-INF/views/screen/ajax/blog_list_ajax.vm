@@ -9,10 +9,10 @@
                 </h1>
                 <div class="entry-meta">
                     <span class="sep">发表于</span>
-                    <time class="entry-date">$!{blog.gmtCreate}</time>
+                    <time class="entry-date">$!dateTool.format($!{blog.gmtCreate})</time>
                     <span class="entry-author">
                         <span class="sep">由</span>
-                        <a href="${rc.contextPath}/user/blogs.htm?author=$!{blog.author}" title="查看所有$!{blog.author}的blog">$!{blog.author}</a>
+                        <a href="${rc.contextPath}/user/blogs.htm?authorId=$!{blog.authorId}" title="查看所有$!{blog.creator}的blog">$!{blog.creator}</a>
                         <span class="sep">发表</span>
                     </span>
                 </div>
@@ -21,6 +21,9 @@
                 </div>
             </header>
             <div class="entry-content">
+                #if ($!{blog.titlePic})
+                    <img src="${rc.contextPath}/$!{blog.titlePic}" />
+                #end
                 $!{blog.brief}
             </div>
             <footer class="entry-meta">

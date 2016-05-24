@@ -1,18 +1,23 @@
 package com.fish.web.action.blog;
 
+import com.fish.biz.common.BaseErrResult;
 import com.fish.biz.domain.blog.Blog;
+import com.fish.biz.enums.common.CommonStatus;
 import com.fish.biz.service.blog.BlogService;
 import com.fish.biz.vo.blog.BlogVO;
+import com.fish.utils.FileUploadUtil;
 import com.fish.web.action.common.BaseAction;
+import com.fish.web.validator.blog.BlogValidator;
 import com.github.pagehelper.PageInfo;
-import com.google.common.collect.Maps;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
-import java.util.Map;
+import java.util.Date;
 
 /**
  * 博客主页
@@ -27,6 +32,10 @@ public class BlogAction extends BaseAction{
 
     @Autowired
     private BlogService blogService;
+
+    @Autowired
+    private BlogValidator blogValidator;
+
 
     /**
      * 博客列表页
@@ -74,7 +83,6 @@ public class BlogAction extends BaseAction{
     @RequestMapping(value = "/blog/details/{blogId}.htm", method = RequestMethod.GET)
     public String blogDetails(@PathVariable("blogId")Long blogId, Model model){
 
-
         model.addAttribute("blog", blogService.findByPrimaryKey(blogId));
 
         model.addAttribute("title", "我的博客");
@@ -83,11 +91,58 @@ public class BlogAction extends BaseAction{
 
     }
 
-    @RequestMapping(value = "/blog/write_blog.htm")
-    public String writeBlog(Model model){
+    @RequestMapping(value = "/blog/write_blog.htm", method = RequestMethod.GET)
+    public String writeBlog(@ModelAttribute("blog")Blog blog, Model model){
 
+        model.addAttribute("cateList", blogService.findCategorys(null));
         model.addAttribute("title", "写博客");
         return "/blog/write_blog";
+    }
+
+    @RequestMapping(value = "/blog/write_blog.htm", method = RequestMethod.POST)
+    public String saveBlog(@ModelAttribute("blog")Blog blog, BindingResult bindingResult,
+                           @RequestParam(value = "titlePicImg", required = false)MultipartFile titlePicImg, Model model){
+
+        blogValidator.validate(blog,bindingResult);
+
+        if (bindingResult.hasErrors()){
+            return "/blog/write_blog";
+        }
+
+        if (titlePicImg != null && titlePicImg.getSize() > 0){
+            BaseErrResult errResult = FileUploadUtil.validateFile(titlePicImg, FileUploadUtil.FileType.IMAGE);
+            if (errResult.isError()){
+                model.addAttribute("imgError",errResult.getMessage());
+                return "/blog/write_blog";
+            }else{
+                String storePath = "blog/pic/";
+                try {
+                    String uploadUrl = FileUploadUtil.uploadFile(storePath, titlePicImg);
+                    blog.setTitlePic(uploadUrl);
+                } catch (Exception e) {
+                    _log.error("title picture upload error, for " + e.getMessage());
+                    model.addAttribute("imgError",errResult.getMessage());
+                    return "/blog/write_blog";
+                }
+            }
+        }
+
+        blog.setIsTop(0);
+        blog.setReplyCount(0);
+        blog.setStatus(CommonStatus.NORMAL.getCode());
+        blog.setClickCount(0);
+        blog.setGmtCreate(new Date());
+        blog.setGmtModify(new Date());
+
+        BaseErrResult result = blogService.saveBlog(blog);
+
+        if (result.isError()){
+            model.addAttribute("errMsg", result.getMessage());
+            return "/blog/write_blog";
+        }
+
+        return "/blog/index";
+
     }
 
 }
