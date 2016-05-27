@@ -1,9 +1,13 @@
 package com.fish.biz.dao.blog;
 
 import com.fish.biz.domain.blog.Category;
+import org.apache.ibatis.annotations.MapKey;
 import org.springframework.stereotype.Repository;
 
+import java.math.BigInteger;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @Repository
 public interface CategoryMapper {
@@ -20,4 +24,7 @@ public interface CategoryMapper {
     int updateByPrimaryKey(Category record);
 
     public List<Category> selectByQuery(Category category);
+
+    @MapKey("id")
+    public Map<Long, Category> selectMapByIds(ArrayList ids);
 }

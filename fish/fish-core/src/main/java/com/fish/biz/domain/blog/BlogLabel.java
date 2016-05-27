@@ -10,6 +10,16 @@ public class BlogLabel {
     /** 标签id */
     private Long labelId;
 
+    private String labelName;
+
+    public String getLabelName() {
+        return labelName;
+    }
+
+    public void setLabelName(String labelName) {
+        this.labelName = labelName;
+    }
+
     public Long getId() {
         return id;
     }

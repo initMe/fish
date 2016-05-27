@@ -2,22 +2,34 @@ package com.fish.web.action.blog;
 
 import com.fish.biz.common.BaseErrResult;
 import com.fish.biz.domain.blog.Blog;
+import com.fish.biz.domain.blog.BlogLabel;
+import com.fish.biz.domain.blog.Category;
+import com.fish.biz.domain.blog.Label;
+import com.fish.biz.domain.comment.Comment;
 import com.fish.biz.enums.common.CommonStatus;
 import com.fish.biz.service.blog.BlogService;
 import com.fish.biz.vo.blog.BlogVO;
 import com.fish.utils.FileUploadUtil;
 import com.fish.web.action.common.BaseAction;
 import com.fish.web.validator.blog.BlogValidator;
+import com.fish.web.validator.blog.CommentValidator;
 import com.github.pagehelper.PageInfo;
+import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.collections.MapUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.math.BigInteger;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+import java.util.Map;
 
 /**
  * 博客主页
@@ -71,6 +83,7 @@ public class BlogAction extends BaseAction{
 
         PageInfo<Blog> page = blogService.pageQuery(blogVO,currentPage,pageSize);
 
+
         if (page.getSize() == 0){
             page = null;
         }
@@ -84,6 +97,8 @@ public class BlogAction extends BaseAction{
     public String blogDetails(@PathVariable("blogId")Long blogId, Model model){
 
         model.addAttribute("blog", blogService.findByPrimaryKey(blogId));
+
+        model.addAttribute("commentList", blogService.findComments(blogId));
 
         model.addAttribute("title", "我的博客");
 
@@ -143,6 +158,19 @@ public class BlogAction extends BaseAction{
 
         return "/blog/index";
 
+    }
+
+    @RequestMapping(value = "/blog/addComment.htm")
+    @ResponseBody
+    public String saveComment(@ModelAttribute("comment")Comment comment){
+
+        BaseErrResult result = blogService.addComment(comment);
+
+        if (result.isError()){
+            return "N|" + result.getMessage();
+        }
+
+        return "Y|success";
     }
 
 }

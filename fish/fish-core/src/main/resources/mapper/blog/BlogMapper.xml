@@ -17,9 +17,15 @@
     <result column="gmt_create" property="gmtCreate" jdbcType="TIMESTAMP" />
     <result column="modifier" property="modifier" jdbcType="VARCHAR" />
     <result column="gmt_modify" property="gmtModify" jdbcType="TIMESTAMP" />
+    <result column="cate_name" property="cateName" jdbcType="VARCHAR"></result>
+    <collection property="labels" resultMap="BaseLabelMap"></collection>
   </resultMap>
   <resultMap id="ResultMapWithBLOBs" type="com.fish.biz.domain.blog.Blog" extends="BaseResultMap" >
     <result column="content" property="content" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <resultMap id="BaseLabelMap" type="com.fish.biz.domain.blog.Label">
+    <result column="label_id" property="id" jdbcType="BIGINT"></result>
+    <result column="label_name" property="name" jdbcType="VARCHAR"></result>
   </resultMap>
   <sql id="Base_Column_List" >
     id, title, cate_code, brief, title_pic, author_id, keywords, is_top, click_count, 
@@ -247,22 +253,27 @@
   </update>
 
   <select id="selectByQuery" resultMap="ResultMapWithBLOBs" parameterType="com.fish.biz.vo.blog.BlogVO">
-    select
-    <include refid="Base_Column_List" />
-    ,
-    <include refid="Blob_Column_List" />
+    select  blog.id, blog.title, blog.cate_code, blog.brief, blog.title_pic, blog.author_id, blog.keywords, blog.is_top, blog.click_count,
+    blog.reply_count, blog.status, blog.creator, blog.gmt_create, blog.modifier, blog.gmt_modify, blog.content
+    , category.name as cate_name, label.id as label_id, label.name as label_name
     from blog
+    left join category
+    on category.id = blog.cate_code
+    left join blog_label
+    on blog_label.blog_id = blog.id
+    left join label
+    on blog_label.label_id = label.id
     <where>
       <if test="id != null" >
-        id = #{id,jdbcType=BIGINT}
+        blog.id = #{id,jdbcType=BIGINT}
       </if>
       <if test="title != null" >
-        and title = #{title,jdbcType=VARCHAR}
+        and blog.title = #{title,jdbcType=VARCHAR}
       </if>
       <if test="cateCode != null" >
-        and cate_code = #{cateCode,jdbcType=INTEGER}
+        and blog.cate_code = #{cateCode,jdbcType=INTEGER}
       </if>
     </where>
-    order by id desc
+    order by blog.id desc
   </select>
 </mapper>

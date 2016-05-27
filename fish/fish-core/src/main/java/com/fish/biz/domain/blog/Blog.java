@@ -53,14 +53,38 @@ public class Blog {
     private String content;
 
     /** 多个标签 id  **/
-    private List<Long> labels;
+    private List<Label> labels;
 
-    public List<Long> getLabels() {
+    private String cateName;
+
+    public Integer getCommentCounts() {
+        return commentCounts;
+    }
+
+    public void setCommentCounts(Integer commentCounts) {
+        this.commentCounts = commentCounts;
+    }
+
+    /**
+     * 评论数
+
+     */
+    private Integer commentCounts;
+
+    public List<Label> getLabels() {
         return labels;
     }
 
-    public void setLabels(List<Long> labels) {
+    public void setLabels(List<Label> labels) {
         this.labels = labels;
+    }
+
+    public String getCateName() {
+        return cateName;
+    }
+
+    public void setCateName(String cateName) {
+        this.cateName = cateName;
     }
 
     public Long getId() {

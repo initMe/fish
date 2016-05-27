@@ -17,25 +17,30 @@
                     </span>
                 </div>
                 <div class="comments-link">
-                    <a href="${rc.contextPath}/comment/comments.htm?blogId=$!{blog.id}">1</a>
+                    <a href="${rc.contextPath}/comment/comments.htm?blogId=$!{blog.id}">$!{blog.replyCount}</a>
                 </div>
             </header>
-            <div class="entry-content">
+            <div class="entry-content #if ($!{blog.titlePic}) row #end">
                 #if ($!{blog.titlePic})
-                    <img src="${rc.contextPath}/$!{blog.titlePic}" />
+                    <div class="blog-title-pic col-md-3">
+                        <img src="${rc.contextPath}/$!{blog.titlePic}" />
+                    </div>
                 #end
-                $!{blog.brief}
+                <div class="blog-breif #if ($!{blog.titlePic}) col-md-9 #end">
+                    $!{blog.brief}
+                </div>
             </div>
             <footer class="entry-meta">
                 <span class="cat-links">
                     <span class="sep">发表在</span>
-                    <a href="${rc.contextPath}/category/details.htm?id=$!{blog.cateCode}" rel="category cat">$!{blog.cateCode}</a>
+                    <a href="${rc.contextPath}/category/list.htm?id=$!{blog.cateCode}" rel="category cat">$!{blog.cateName}</a>
                 </span>
                 <span class="sep">|</span>
                 <span class="tag-links">
                     <span class="sep">标签有</span>
-                    #foreach ($label in $labels)
+                    #foreach ($label in $blog.labels)
                         <a href="${rc.contextPath}/label/details.htm?id=$!{label.id}" rel="cat">$!{label.name}</a>
+                        #if ($velocityCount < $blog.labels.size())，#end
                     #end
                 </span>
             </footer>
